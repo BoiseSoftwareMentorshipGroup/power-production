@@ -1,0 +1,29 @@
+body {
+    background-color: #43c07f !important;
+}
+
+h1 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.panel-inner {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
+}
+
+#member-logo {
+  max-height: 150px;
+  max-width: 300px;
+}
+
+#infographics {
+  margin-top: 20px;
+}
+
+.container {
+    margin-top: 50px;
+    max-width: 500px;
+}
