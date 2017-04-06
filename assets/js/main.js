@@ -30,13 +30,9 @@
         var homes = Math.ceil(year / 12);
         var carbon = Math.ceil(year * 2100);
 
-        var vendorTotal = data[i]["gsx$total"]["$t"];
+        var vendorTotal = Math.ceil(data[i]["gsx$total"]["$t"] * 365);
         var homesTotal = Math.ceil(vendorTotal / 12);
         var carbonTotal = Math.ceil(vendorTotal * 2100);
-
-        console.log(vendorTotal);
-        console.log(homesTotal);
-        console.log(carbonTotal);
 
         $('#member-logo').attr('src', imageFolder + memberLogo);
         $('#icea-member').text(iceaMember);
