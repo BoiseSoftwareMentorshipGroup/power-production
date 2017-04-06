@@ -1,7 +1,7 @@
 (function ($) {
   var spreadsheetId = "11SfUjhoXnDKTjXofiA3EWtT2sorrIdK8ZZxvGnumRQM";
   var sheetNum = 1;
-  var imageFolder = "/assets/img/";
+  var imageFolder = "assets/img/";
   var i = 0;
 
   $.ajax({
