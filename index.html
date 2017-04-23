@@ -6,70 +6,60 @@
     <meta name="viewport" content="width=device-width">
     <title>ICEA Members</title>
 
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet"
-          type="text/css"/>
-    <link href="assets/css/main.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-<div class="container">
-    <div class="panel panel-default">
-        <div class="panel-body text-center">
-            <div class="panel-inner">
-                <img id="member-logo" src="http://www.usgeothermal.com/images/MainLogo.png" alt="">
-                <h1 id="icea-member"></h1>
-                <h2>Energy Production (MwH)</h2>
+    <div class="container">
+        <div class="panel panel-default icea-panel">
+            <div class="panel-body text-center">
+                <div class="panel-inner">
+                    <img id="member-logo" src="" alt="">
+                    <h2>Energy Production (MwH)</h2>
+                    <div class="row border-box">
+                        <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+                        <div class="col-xs-4">
+                            <h3>Day</h3>
+                            <span id="icea-day"></span>
+                        </div>
+                        <div class="col-xs-4">
+                            <h3>Month</h3>
+                            <span id="icea-month"></span>
+                        </div>
+                        <div class="col-xs-4">
+                            <h3>Year</h3>
+                            <span id="icea-year"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="infographics" class="row">
+                    <div class="col-xs-6">
+                        <i class="fa fa-home fa-4x"></i>
+                        <h3 id="">Powers</h3>
+                        <h3 id="homes" class="data"></h3>
+                        <h3>Homes Annually</h3>
+                    </div>
+                    <div class="col-xs-6">
+                        <i class="fa fa-sun-o fa-4x"></i>
+                        <h3 id="">Saves</h3>
+                        <h3 id="carbon" class="data"></h3>
+                        <h3>lbs of carbon emissions</h3>
+                    </div>
+                </div>
                 <div class="row">
-                    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-                    <div class="col-xs-4">
-                        <h3>Day</h3>
-                        <span id="icea-day"></span>
+                    <div class="col-xs-12">
+                        <p class="card-summary">ICEA members power <span id="homes-total"></span> homes saving <span id="carbon-total"></span> lbs of carbon emissions annually!</p>
                     </div>
-                    <div class="col-xs-4">
-                        <h3>Month</h3>
-                        <span id="icea-month"></span>
-                    </div>
-                    <div class="col-xs-4">
-                        <h3>Year</h3>
-                        <span id="icea-year"></span>
-                    </div>
-                </div>
-            </div>
-            <div id="infographics" class="row">
-                <div class="col-xs-6">
-                    <i class="fa fa-home fa-4x"></i>
-                    <h3 id="">Powers</h3>
-                    <h3 id="homes"></h3>
-                    <h3>Homes Annually</h3>
-                </div>
-                <div class="col-xs-6">
-                    <i class="fa fa-sun-o fa-4x"></i>
-                    <h3 id="">Saves</h3>
-                    <h3 id="carbon"></h3>
-                    <h3>lbs of carbon emissions</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-6">
-                    <i class="fa fa-home fa-4x"></i>
-                    <h3>Powers</h3>
-                    <h3 id="homes-total"></h3>
-                    <h3>Homes Annually</h3>
-                </div>
-                <div class="col-xs-6">
-                    <i class="fa fa-sun-o fa-4x"></i>
-                    <h3>Saves</h3>
-                    <h3 id="carbon-total"></h3>
-                    <h3>lbs of carbon emissions</h3>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/main.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
 
 </body>
 
