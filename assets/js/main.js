@@ -59,14 +59,14 @@
 
   function updateData(i) {
     var iceaMember = iceaMember = data[i]["gsx$iceamember"]["$t"];
-    var day = (Number(data[i]["gsx$day"]["$t"]) * quarterlySeasonalAdjustment()).toFixed(2);
-    console.log(typeof day, day);
+    var day = (Number(data[i]["gsx$day"]["$t"]).toFixed(2));
+    var qsaDay = day * quarterlySeasonalAdjustment();
     var nameplateCapacity = data[i]["gsx$nameplatecapacity"]["$t"];
     var capacityFactor = data[i]["gsx$capacityfactor"]["$t"];
     var vendorTotal = Math.ceil(data[i]["gsx$total"]["$t"] * 365);
     var memberLogo = data[i]["gsx$memberlogo"]["$t"]; // To be removed when implemented (use wordpress media)
 
-    var month = Math.ceil(day * 30);
+    var month = Math.ceil(qsaDay * 30);
     var year = Math.ceil(day * 365);
     var homes = Math.ceil(year / 12);
     var carbon = Math.ceil(year * 2100);
@@ -76,7 +76,7 @@
 
     $('#member-logo').attr('src', imageFolder + memberLogo);
     $('#icea-member').text(iceaMember);
-    $('#icea-day').text(day.toLocaleString());
+    $('#icea-day').text(qsaDay.toLocaleString());
     $('#icea-month').text(month.toLocaleString());
     $('#icea-year').text(year.toLocaleString());
     $('#homes').text(homes.toLocaleString());
