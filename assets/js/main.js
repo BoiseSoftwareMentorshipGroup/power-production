@@ -12,11 +12,9 @@
     url: "https://spreadsheets.google.com/feeds/list/" + spreadsheetId + "/" + sheetNum + "/public/values?alt=json",
     success: function (response) {
       data = response.feed.entry;
-      vendorAnnualTotal = data.reduce(function(acc, val){
-        return Math.ceil(
-          Number(acc) + Number(val["gsx$day"]["$t"])
-          );
-      }, 0) * 365;
+      vendorAnnualTotal = (data.reduce(function(acc, val){
+        return Number(acc) + Number(val["gsx$day"]["$t"]);
+      }, 0) * 365) / 2;
 
       data = data.filter(function(vendor){
         return vendor["gsx$carousel"]["$t"] === "y"
@@ -76,19 +74,19 @@
     var energyType = data[i]["gsx$energytype"]["$t"];
     var memberLogo = data[i]["gsx$memberlogo"]["$t"]; // To be removed when implemented (use wordpress media)
     var nameplateCapacity = data[i]["gsx$nameplatecapacity"]["$t"];
-    var day = (Number(data[i]["gsx$day"]["$t"]).toFixed(2));
+    var day = Number(data[i]["gsx$day"]["$t"]).toFixed(2);
     var capacityFactor = data[i]["gsx$capacityfactor"]["$t"];
     
     /**
      * Local Variables
      **/
-    var qsaDay = (energyType === "solar") ? day * quarterlySeasonalAdjustment() : day;
-    var month = Math.ceil(qsaDay * 30);
-    var year = Math.ceil(day * 365);
-    var homes = Math.ceil(year / 12);
-    var carbon = Math.ceil(year * 2100);
-    var homesTotal = Math.ceil(vendorAnnualTotal / 12);
-    var carbonTotal = Math.ceil(vendorAnnualTotal * 2100);
+    var qsaDay = (energyType === "solar") ? Number((day * quarterlySeasonalAdjustment()).toFixed(2)) : day;
+    var month = Number((qsaDay * 30).toFixed(2));
+    var year = Number((day * 365).toFixed(2));
+    var homes = Math.round(year / 12);
+    var carbon = Math.round(year * 2100);
+    var homesTotal = Math.round(vendorAnnualTotal / 12);
+    var carbonTotal = Math.round(vendorAnnualTotal * 2100);
 
     if(memberLogo){
       $('#member-logo').attr('src', imageFolder + memberLogo);
