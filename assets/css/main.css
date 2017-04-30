@@ -23,9 +23,17 @@
 }
 
 #member-logo {
-  min-height: 85px;
-  max-height: 150px;
+  max-height: 85px;
   max-width: 300px;
+}
+
+#icea-member {
+  margin: 0;
+}
+
+.member-info {
+  margin-top: 15px;
+  height: 90px;
 }
 
 #infographics {
