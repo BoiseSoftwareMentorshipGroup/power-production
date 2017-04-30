@@ -1,6 +1,16 @@
 .icea-panel {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
+    color: #656565;
+}
+
+.icea-panel h2 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.icea-panel hr {
+  color: #ddd;
 }
 
 .icea-panel h3 {
@@ -12,28 +22,41 @@
   margin-top: 15px;
 }
 
-.border-box {
-  border: 1px solid #ccc;
-  margin: 20px;
-  padding: 10px;
+.icea-panel-body {
+  padding-left: 0;
+  padding-right: 0;
 }
+
+
 
 .data {
   font-weight: bold;
 }
 
+#icea-data {
+  padding: 20px 0;
+  background-color: #1F2933;
+  color: #F8F8F8;
+}
+
+#icea-data > h2 {
+  margin-bottom: 25px;
+}
+
 #member-logo {
   max-height: 85px;
-  max-width: 300px;
+  max-width: 400px;
 }
 
 #icea-member {
-  margin: 0;
+  color: #000;
+  margin: 15px 0 0 0;
 }
 
 .member-info {
-  margin-top: 15px;
-  height: 90px;
+  color: #1f2933;
+  padding: 15px;
+  height: 120px;
 }
 
 #infographics {
