@@ -18,6 +18,10 @@
           );
       }, 0) * 365;
 
+      data = data.filter(function(vendor){
+        return vendor["gsx$carousel"]["$t"] === "y"
+      });
+
       updateData(i);
 
       setInterval(function () {
@@ -64,22 +68,38 @@
   };
 
   function updateData(i) {
-    var iceaMember = iceaMember = data[i]["gsx$iceamember"]["$t"];
-    var day = (Number(data[i]["gsx$day"]["$t"]).toFixed(2));
-    var qsaDay = day * quarterlySeasonalAdjustment();
-    var nameplateCapacity = data[i]["gsx$nameplatecapacity"]["$t"];
-    var capacityFactor = data[i]["gsx$capacityfactor"]["$t"];
+    /** 
+     * Spreadsheet data
+     * https://docs.google.com/spreadsheets/d/11SfUjhoXnDKTjXofiA3EWtT2sorrIdK8ZZxvGnumRQM/edit#gid=493512505
+     **/
+    var iceaMember = data[i]["gsx$iceamember"]["$t"];
+    var energyType = data[i]["gsx$energytype"]["$t"];
     var memberLogo = data[i]["gsx$memberlogo"]["$t"]; // To be removed when implemented (use wordpress media)
-
+    var nameplateCapacity = data[i]["gsx$nameplatecapacity"]["$t"];
+    var day = (Number(data[i]["gsx$day"]["$t"]).toFixed(2));
+    var capacityFactor = data[i]["gsx$capacityfactor"]["$t"];
+    
+    /**
+     * Local Variables
+     **/
+    var qsaDay = (energyType === "solar") ? day * quarterlySeasonalAdjustment() : day;
     var month = Math.ceil(qsaDay * 30);
     var year = Math.ceil(day * 365);
     var homes = Math.ceil(year / 12);
     var carbon = Math.ceil(year * 2100);
-
     var homesTotal = Math.ceil(vendorAnnualTotal / 12);
     var carbonTotal = Math.ceil(vendorAnnualTotal * 2100);
 
-    $('#member-logo').attr('src', imageFolder + memberLogo);
+    if(memberLogo){
+      $('#member-logo').attr('src', imageFolder + memberLogo);
+      $('#member-logo').show();
+      $('#icea-member').hide();
+    }
+    else {
+      $('#icea-member').show();
+      $('#member-logo').hide();
+    }
+    
     $('#icea-member').text(iceaMember);
     $('#icea-day').text(qsaDay.toLocaleString());
     $('#icea-month').text(month.toLocaleString());
