@@ -1,5 +1,6 @@
 (function ($) {
   var data;
+  var vendorAnnualTotal;
   var spreadsheetId = "11SfUjhoXnDKTjXofiA3EWtT2sorrIdK8ZZxvGnumRQM";
   var sheetNum = 1;
   var imageFolder = "assets/img/";
@@ -11,6 +12,11 @@
     url: "https://spreadsheets.google.com/feeds/list/" + spreadsheetId + "/" + sheetNum + "/public/values?alt=json",
     success: function (response) {
       data = response.feed.entry;
+      vendorAnnualTotal = data.reduce(function(acc, val){
+        return Math.ceil(
+          Number(acc) + Number(val["gsx$day"]["$t"])
+          );
+      }, 0) * 365;
 
       updateData(i);
 
@@ -63,7 +69,6 @@
     var qsaDay = day * quarterlySeasonalAdjustment();
     var nameplateCapacity = data[i]["gsx$nameplatecapacity"]["$t"];
     var capacityFactor = data[i]["gsx$capacityfactor"]["$t"];
-    var vendorTotal = Math.ceil(data[i]["gsx$total"]["$t"] * 365);
     var memberLogo = data[i]["gsx$memberlogo"]["$t"]; // To be removed when implemented (use wordpress media)
 
     var month = Math.ceil(qsaDay * 30);
@@ -71,8 +76,8 @@
     var homes = Math.ceil(year / 12);
     var carbon = Math.ceil(year * 2100);
 
-    var homesTotal = Math.ceil(vendorTotal / 12);
-    var carbonTotal = Math.ceil(vendorTotal * 2100);
+    var homesTotal = Math.ceil(vendorAnnualTotal / 12);
+    var carbonTotal = Math.ceil(vendorAnnualTotal * 2100);
 
     $('#member-logo').attr('src', imageFolder + memberLogo);
     $('#icea-member').text(iceaMember);
