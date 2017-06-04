@@ -19,6 +19,11 @@
         return vendor["gsx$carousel"]["$t"] === "y"
       });
 
+      if (data.length > 0){
+        $('.carousel-button-left').show();
+        $('.carousel-button-right').show();
+      }
+
       updateData(i);
 
       // setInterval(function () {
@@ -71,7 +76,7 @@
      **/
     var iceaMember = data[i]["gsx$iceamember"]["$t"];
     var energyType = data[i]["gsx$energytype"]["$t"];
-    var memberLogo = data[i]["gsx$memberlogo"]["$t"]; // To be removed when implemented (use wordpress media)
+    var memberLogo = data[i]["gsx$memberlogo"]["$t"];
     var nameplateCapacity = data[i]["gsx$nameplatecapacity"]["$t"];
     var day = Number(data[i]["gsx$day"]["$t"]).toFixed(2);
     var capacityFactor = data[i]["gsx$capacityfactor"]["$t"];
