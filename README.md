@@ -1,4 +1,5 @@
 # ICEA Energy Production
+### Click [here](https://boisesoftwarementorshipgroup.github.io/power-production/) to see the demo!
 
 ## Google Sheet (Data)
 This project utilizes Google Sheets to retrieve Data. You must have Read/Write privileges to modify data on the spreadsheet.
