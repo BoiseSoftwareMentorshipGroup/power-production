@@ -19,7 +19,7 @@
         return vendor["gsx$carousel"]["$t"] === "y"
       });
 
-      if (data.length > 0){
+      if (data.length > 1){
         $('.carousel-button-left').show();
         $('.carousel-button-right').show();
       }
