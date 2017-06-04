@@ -13,50 +13,52 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="panel panel-default icea-panel">
-            <div class="panel-body text-center">
-                <div class="panel-inner">
-                    <div class="member-info">
-                        <img id="member-logo" src="" alt="">
-                        <h1 id="icea-member"></h1>
-                    </div>
-                    
-                    <div id="icea-data" class="row">
-                        <h2>ENERGY PRODUCTION (MwH)</h2>
-                        <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-                        <div class="col-xs-4">
-                            <h3>Day</h3>
-                            <span id="icea-day"></span>
+    <div id="icea-member-pane">
+        <div>
+            <div class="panel-default icea-panel">
+                <div class="text-center">
+                    <div class="panel-inner">
+                        <div class="energy-production">
+                            <h1>Energy Production</h1>
                         </div>
-                        <div class="col-xs-4">
-                            <h3>Month</h3>
-                            <span id="icea-month"></span>
+                        <div class="member-info">
+                            <img id="member-logo" src="" alt="">
+                            <h1 id="icea-member"></h1>
                         </div>
-                        <div class="col-xs-4">
-                            <h3>Year</h3>
-                            <span id="icea-year"></span>
+                        <div id="icea-data" class="row">
+                            <div class="col-xs-4">
+                                <h3>Day</h3>
+                                <span id="icea-day"></span>
+                            </div>
+                            <div class="col-xs-4">
+                                <h3>Month</h3>
+                                <span id="icea-month"></span>
+                            </div>
+                            <div class="col-xs-4">
+                                <h3>Year</h3>
+                                <span id="icea-year"></span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div id="infographics" class="row">
-                    <div class="col-xs-6">
-                        <i class="fa fa-home fa-4x"></i>
-                        <h3 id="">Powers</h3>
-                        <h3 id="homes" class="data"></h3>
-                        <h3>Homes Annually</h3>
+                    <div id="infographics" class="row">
+                        <div class="col-xs-6">
+                            <i class="fa fa-home fa-4x"></i>
+                            <h3 id="">Powers</h3>
+                            <h3 id="homes" class="data"></h3>
+                            <h3>Homes Annually</h3>
+                        </div>
+                        <div class="col-xs-6">
+                            <i class="fa fa-sun-o fa-4x"></i>
+                            <h3 id="">Saves</h3>
+                            <h3 id="carbon" class="data"></h3>
+                            <h3>lbs of carbon emissions</h3>
+                        </div>
                     </div>
-                    <div class="col-xs-6">
-                        <i class="fa fa-sun-o fa-4x"></i>
-                        <h3 id="">Saves</h3>
-                        <h3 id="carbon" class="data"></h3>
-                        <h3>lbs of carbon emissions</h3>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <p class="card-summary">ICEA members power <span id="homes-total"></span> homes saving <span id="carbon-total"></span> lbs
-                            of carbon emissions annually!</p>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <p class="card-summary">ICEA members power <span id="homes-total"></span> homes saving <span id="carbon-total"></span>lbs
+                                of carbon emissions annually!</p>
+                        </div>
                     </div>
                 </div>
             </div>

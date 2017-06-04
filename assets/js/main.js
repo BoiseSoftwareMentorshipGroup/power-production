@@ -3,7 +3,6 @@
   var vendorAnnualTotal;
   var spreadsheetId = "11SfUjhoXnDKTjXofiA3EWtT2sorrIdK8ZZxvGnumRQM";
   var sheetNum = 1;
-  var imageFolder = "assets/img/";
   var i = 0;
 
   $.ajax({
@@ -89,7 +88,7 @@
     var carbonTotal = Math.round(vendorAnnualTotal * 2100);
 
     if(memberLogo){
-      $('#member-logo').attr('src', imageFolder + memberLogo);
+      $('#member-logo').attr('src', memberLogo);
       $('#member-logo').show();
       $('#icea-member').hide();
     }

@@ -1,7 +1,18 @@
-.icea-panel {
+#icea-member-pane .icea-panel {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     color: #656565;
+}
+
+#icea-member-pane row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.energy-production > h1 {
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: .5em;
 }
 
 .icea-panel h2 {
@@ -27,15 +38,13 @@
   padding-right: 0;
 }
 
-
-
-.data {
+.icea-panel .data {
   font-weight: bold;
 }
 
-#icea-data {
+#icea-data, .member-info {
   padding: 20px 0;
-  background-color: #1F2933;
+  background-color: #72C4C0;
   color: #F8F8F8;
 }
 
@@ -49,21 +58,17 @@
 }
 
 #icea-member {
-  color: #000;
+  color: #fff;
   margin: 15px 0 0 0;
 }
 
-.member-info {
-  color: #1f2933;
+.icea-panel .energy-production {
+  background-color: #1F2933;
+  color: #fff;
   padding: 15px;
   height: 120px;
 }
 
 #infographics {
   margin-top: 20px;
-}
-
-.container {
-  margin-top: 50px;
-  max-width: 500px;
 }
