@@ -29,6 +29,10 @@
   margin: 0;
 }
 
+.icea-panel .verb {
+  margin-top: 15px;
+}
+
 .icea-panel p {
   margin-top: 15px;
 }
@@ -43,8 +47,9 @@
 }
 
 #icea-data, .member-info {
+  height: 125px;
+  max-height: 125px;
   padding: 20px 0;
-  background-color: #72C4C0;
   color: #F8F8F8;
 }
 
@@ -70,5 +75,16 @@
 }
 
 #infographics {
-  margin-top: 20px;
+  padding: 0 15%;
+}
+
+.carousel-button-left, .carousel-button-right {
+  color: #72C4C0;
+  margin-top: 50px;
+}
+
+.carousel-button-left:hover, .carousel-button-right:hover {
+  cursor: pointer;
+  color: #fff;
+  text-shadow: -1px 0 #1f2933, 0 1px #1f2933, 1px 0 #1f2933, 0 -1px #1f2933;
 }

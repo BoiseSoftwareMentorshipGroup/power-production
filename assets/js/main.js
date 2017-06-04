@@ -11,20 +11,20 @@
     url: "https://spreadsheets.google.com/feeds/list/" + spreadsheetId + "/" + sheetNum + "/public/values?alt=json",
     success: function (response) {
       data = response.feed.entry;
-      vendorAnnualTotal = (data.reduce(function(acc, val){
+      vendorAnnualTotal = (data.reduce(function (acc, val) {
         return Number(acc) + Number(val["gsx$day"]["$t"]);
       }, 0) * 365) / 2;
 
-      data = data.filter(function(vendor){
+      data = data.filter(function (vendor) {
         return vendor["gsx$carousel"]["$t"] === "y"
       });
 
       updateData(i);
 
-      setInterval(function () {
-        i === data.length - 1 ? i = 0 : i++;
-        updateData(i);
-      }, 3000);
+      // setInterval(function () {
+      //   i === data.length - 1 ? i = 0 : i++;
+      //   updateData(i);
+      // }, 3000);
     }
   });
 
@@ -75,7 +75,7 @@
     var nameplateCapacity = data[i]["gsx$nameplatecapacity"]["$t"];
     var day = Number(data[i]["gsx$day"]["$t"]).toFixed(2);
     var capacityFactor = data[i]["gsx$capacityfactor"]["$t"];
-    
+
     /**
      * Local Variables
      **/
@@ -87,7 +87,7 @@
     var homesTotal = Math.round(vendorAnnualTotal / 12);
     var carbonTotal = Math.round(vendorAnnualTotal * 2100);
 
-    if(memberLogo){
+    if (memberLogo) {
       $('#member-logo').attr('src', memberLogo);
       $('#member-logo').show();
       $('#icea-member').hide();
@@ -96,7 +96,7 @@
       $('#icea-member').show();
       $('#member-logo').hide();
     }
-    
+
     $('#icea-member').text(iceaMember);
     $('#icea-day').text(qsaDay.toLocaleString());
     $('#icea-month').text(month.toLocaleString());
@@ -106,5 +106,16 @@
     $('#carbon-total').text(carbonTotal.toLocaleString());
     $('#homes-total').text(homesTotal.toLocaleString());
   }
+
+  $('.carousel-button-right').on('click', function () {
+    i === data.length - 1 ? i = 0 : i++;
+    updateData(i);
+  })
+
+  $('.carousel-button-left').on('click', function () {
+    i === 0 ? i = data.length - 1 : i--;
+    updateData(i);
+  })
+
 
 })(jQuery);
