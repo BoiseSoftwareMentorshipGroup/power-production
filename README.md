@@ -9,9 +9,9 @@ This project utilizes Google Sheets to retrieve Data. You must have Read/Write p
 |Column|Values|Description|
 |---|---|---|
 |carousel|y/n|Toggles weather or not the member is displayed in the carousel
-|iceamember|{member's name}|The member name to display at the top of the carousel if no logo is present|
+|iceamember|Member's name|The member name to display at the top of the carousel if no logo is present|
 |energytype|solar/geothermal|The energy type the member produces. Solar energy will be affected by a Quarterly Seasonal Adjustment|
-|memberlogo|/wp-content/uploads/{year}/{mo}/{filename}|The path to the member's logo. This will be assigned when the file is uploaded to Wordpress|
+|memberlogo|Path to logo|The path to the member's logo. This will be assigned when the file is uploaded to Wordpress. E.g., /wp-content/uploads/2017/06/logo.jpg|
 |nameplatecapacity|decimal|The nameplate capacity for the member|
 |capacityfactor|decimal|The capacity factor for the member|
 |day|decimal|nameplatecapacity * capacityfactor * 24
