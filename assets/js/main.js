@@ -19,12 +19,16 @@
         return vendor["gsx$carousel"]["$t"] === "y"
       });
 
-      if (data.length > 1){
+      if (data.length === 0) {
+        $('#icea-member-pane').hide();
+      }
+      else if (data.length > 1) {
         $('.carousel-button-left').show();
         $('.carousel-button-right').show();
       }
-
-      updateData(i);
+      else {
+        updateData(i);
+      }
 
       // setInterval(function () {
       //   i === data.length - 1 ? i = 0 : i++;
